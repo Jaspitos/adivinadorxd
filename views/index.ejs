@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+  </head>
+  <body>
+    <h1></h1>
+    <p></p>
+    <div class="container">
+      <div class="carousel">
+        <a id="hp" class="carousel-item"><img src="images/hp.jpg"></a>
+        <a id="sdla" class="carousel-item"><img src="images/sdla.jpg"></a>
+        <a id="th" class="carousel-item"><img src="images/hobbit.jpg"></a>
+      </div>
+      <div class="row" >
+        <div id="dif1" style="color: aliceblue" class="col s2 offset-s2 center-align flow-text waves-effect waves-yellow">Fácil</div>
+        <div id="dif2" style="color: aliceblue" class="col s2 offset-s1 center-align flow-text waves-effect waves-orange">Medio</div>
+        <div id="dif3" style="color: aliceblue" class="col s2 offset-s1 center-align flow-text waves-effect waves-red">Difícil</div>
+      </div>
+
+        <form id="main" action="/" method="post">
+          <input type="hidden" id="saga" name="sagaF">
+          <input type="hidden" id="dif" name="difF">
+          <div class="center-align" style="margin-top: 30%">
+            <ul id="pro">
+              <li style="opacity: 0">
+                <button id="btn" onclick="rellenarForm()" style="background-color: cornflowerblue;" class="btn waves-effect waves-purple" type="submit">Empezar</button>
+              </li>
+            </ul>
+        </form>
+
+      </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    <script src="/javascripts/jquery.form.js"></script>
+    <script src="/javascripts/index.js"></script>
+  <script>
+      var options = [{selector: '#pro', offset: 80, callback: function(el) { Materialize.showStaggeredList($(el)); } }];
+      Materialize.scrollFire(options);
+
+      $(document).ready(function(){
+          $("#dif1").click(function(){
+              $('#dif').val('1');
+              $('#dif').text('fácil');
+          });
+          $("#dif2").click(function(){
+              $('#dif').val('2');
+              $('#dif').text('media');
+          });
+          $("#dif3").click(function(){
+              $('#dif').val('3');
+              $('#dif').text('difícil');
+          });
+
+      });
+
+      function rellenarForm() {
+          if($("#hp").hasClass("carousel-item active")) {
+              $('#saga').val('hp');
+              $('#saga').text('Harry Potter');
+          }
+          if($("#sdla").hasClass("carousel-item active")) {
+              $('#saga').val('sdla');
+              $('#saga').text('El Señor de los Anillos');
+          }
+          if($("#th").hasClass("carousel-item active")) {
+              $('#saga').val('th');
+              $('#saga').text('El Hobbit');
+          }
+          if($("#dif").val() == '' )  $('#dif').val('0');
+          else alert("Has elegido: "+document.getElementById("saga").textContent+" en dificultad "+document.getElementById("dif").textContent+"\n¡Buena suerte!"+"\n(Tarda un poco en cargar dale su tiempo)");
+      }
+  </script>
+  </body>
+</html>

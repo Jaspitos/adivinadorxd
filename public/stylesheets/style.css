@@ -1,0 +1,54 @@
+body {
+  padding: 50px;
+  background-image: url("../images/bg.jpg");
+  background-repeat:no-repeat;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size:cover;
+  background-position:center;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.centro {
+  position: absolute;
+  z-index: 15;
+  top: 20%;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+
+}
+
+.centro2 {
+  position: absolute;
+  z-index: 15;
+  top: 20%;
+  left: 50%;
+  margin: -100px 0 0 20px;
+}
+
+.centroTexto {
+  position: absolute;
+  z-index: 15;
+  top: 20%;
+  left: 50%;
+  margin: -100px 0 0 -300px;
+}
+
+.centrarLista {
+  position: absolute;
+  z-index: 15;
+  top: 20%;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+
+}
+
+.tabs .indicator {
+  background-color: #039be5;
+}
+
+
