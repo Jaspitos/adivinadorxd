@@ -1,4 +1,4 @@
-/**
+j/**
  * Created by Zaros on 03/07/2017.
  */
 $(document).ready(function(){
@@ -47,7 +47,7 @@ $(document).ready(function(){
         var i = 0;
 
         for(var j = 0;j<res.length;j++) {
-            if(res[i] == resc[i]) i++;
+            if(res[j] === resc[j]) i++;
         }
 
         if(i <= 3) alert("Has acertado "+i+"/10\nEres un patán no?");
